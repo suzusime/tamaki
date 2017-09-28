@@ -2,17 +2,31 @@
 //  Single-line comments, starting with '//' will not be included in your final CSS file. Multiline comments,
 //  structured like the flavor description below, will be included in your final CSS file.
 /*
-  Flavor name: Default (mini-default)
-  Author: Angelos Chalaris (chalarangelo@gmail.com)
-  Maintainers: Angelos Chalaris
+  Flavor name: Tamaki
+  Author: suzusime (tamagawajousuiro+git@gmail.com)
+  Maintainers: suzusime
   mini.css version: v2.3.4
 */
 //  Basic rules for body and typography
-$fore-color:            #212121;                  // Text and general foreground color
-$back-color:            #f8f8f8;                  // Body background color
+//游ゴシック体を調整したもの
+@font-face {
+	font-family: 'MyYuGothicM';
+	font-weight: normal;
+	src: local('YuGothic-Medium'),
+	local('Yu Gothic Medium'),
+	local('YuGothic-Regular');
+}
+@font-face {
+	font-family: 'MyYuGothicM';
+	font-weight: bold;
+	src: local('YuGothic-Bold'),
+	local('Yu Gothic');
+}
+
+$fore-color:            #2b2b2b;//黒              // Text and general foreground color
+$back-color:            #f8fbf8;//白磁            // Body background color
 $base-font-family:                                // Default font stack for all elements:
-  '-apple-system, BlinkMacSystemFont,\"Segoe UI\",\"Roboto\", \"Droid Sans\",\"Helvetica Neue\", Helvetica, Arial, sans-serif';
-// OS X and iOS system fonts (San Francisco) -> Windows system fonts -> Android system fonts (newer and older) -> Fallback fonts
+  '-apple-system, BlinkMacSystemFont, \"Open Sans\", \"Segoe UI\",\"Roboto\", \"Droid Sans\",\"Helvetica Neue\", Helvetica, Verdana, Arial, MyYuGothicM, YuGothic, sans-serif';
 $base-root-font-size:   16px;                     // Root font sizing for all elements [1]
 $_1px:  (1px/$base-root-font-size) * 1rem;        // Calculated rem value of 1px [1]
 $base-font-size:        1rem;                     // Default font sizing for all elements [2]
@@ -269,18 +283,18 @@ $switch-knob-box-shadow:        none;              // Box shadow for the switch'
 // [3] - The value of $checkbox-size will determine a few variables like some `margin` values, `height`, `width` etc.
 //  Variables for navigational elements
 $header-height:            2.75rem;                // Height for <header>
-$header-back-color:        #12171a;                // Background color for <header>
-$header-fore-color:        #f5f5f5;                // Text color for <header>
+$header-back-color:        #d3381c;//緋色          // Background color for <header>
+$header-fore-color:        #ffffff;//白            // Text color for <header>
 $header-border-style:      0;                      // Border style for <header>
 $header-margin:            0;                      // Margin for <header>
 $header-padding:           0.125rem 0.5rem;        // Padding for <header>
-$header-box-shadow:        none;                   // Box shadow for <header>
+$header-box-shadow:        0px 0px 14px 2px #afafb0;  // Box shadow for <header>
 $header-logo-name:         'logo';                 // Class name for <header>'s logo
 $header-logo-font-size:    1.75rem;                // Font size for <header>'s logo
 $header-logo-line-height:  1.3125em;               // Line height for <header>'s logo
 $header-logo-margin:       0.0625rem 0.375rem 0.0625rem 0.0625rem;  // Margin for <header>'s logo
 $header-logo-padding:      0;                      // Padding for <header>'s logo
-$header-link-hover-color:  #20292e;                // Hover color for <header>'s links
+$header-link-hover-color:  #8f2e14;//弁柄色i       // Hover color for <header>'s links
 $header-link-margin:       0.125rem 0;             // Margin for <header>'s links
 $include-header-sticky:    true;                   // Should sticky <header> elements be included? (`true`/`false`) [1]
 $header-sticky-name:       'sticky';               // Class name for sticky <header>
@@ -642,3 +656,18 @@ $include-center-block-name:   false;               // Should center block be inc
 @include make-box-shadow-generic ($box-shadow-style1-name, $box-shadow-style1-value);
 @include make-hidden-responsive ($responsive-hidden-prefix);
 @include make-visually-hidden-responsive ($responsive-visually-hidden-prefix);
+
+/*
+  以下上書き用
+*/
+//プロポーショナル字形を使う
+h1 {
+	font-feature-settings : "pwid" 1;
+}
+h2 {
+	font-feature-settings : "pwid" 1;
+}
+h3 {
+	font-feature-settings : "pwid" 1;
+}
+
